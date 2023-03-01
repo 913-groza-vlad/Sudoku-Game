@@ -19,7 +19,7 @@ public class SudokuBoard implements Serializable {
         return gameState;
     }
 
-    public int[][] getGameBoard() {
+    public int[][] copyGameBoard() {
         return GameUtilities.copyBoard(gameBoard);
     }
 }
