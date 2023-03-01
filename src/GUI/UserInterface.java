@@ -27,10 +27,10 @@ public class UserInterface implements IUserInterface.View, EventHandler<KeyEvent
     private HashMap<Coordinates, SudokuTextField> boardFields;
     private IUserInterface.EventListener listener;
 
-    private static double HEIGHT = 750;
-    private static double WIDTH = 680;
+    private static double WIDTH = 710;
+    private static double HEIGHT = 690;
     private static double BOARD_PADDING = 50;
-    private static double BOARD_XY = 572;
+    private static double BOARD_XY = 575;
     private static Color BACKGROUND= Color.rgb(4, 4, 52);
     private static Color BOARD_BACKGROUND = Color.rgb(236, 232, 232);
 
@@ -114,25 +114,23 @@ public class UserInterface implements IUserInterface.View, EventHandler<KeyEvent
         boardBackground.setY(BOARD_PADDING);
         boardBackground.setWidth(BOARD_XY);
         boardBackground.setHeight(BOARD_XY);
-
         boardBackground.setFill(BOARD_BACKGROUND);
-
         root.getChildren().addAll(boardBackground);
     }
 
     private void designTitle(Group root) {
-        Text title = new Text(240, 700, "Sudoku");
+        Text title = new Text(250, 670, "Sudoku");
         title.setFill(Color.WHITE);
-        Font titleFont = new Font(44);
+        Font titleFont = new Font(42);
         title.setFont(titleFont);
         root.getChildren().add(title);
     }
 
     private void designBackground(Group root) {
-        Scene scene = new Scene(root, HEIGHT, WIDTH);
+        Scene scene = new Scene(root, WIDTH, HEIGHT);
         scene.setFill(BACKGROUND);
         primaryStage.setScene(scene);
-
+        primaryStage.setTitle("Sudoku");
     }
 
     @Override
